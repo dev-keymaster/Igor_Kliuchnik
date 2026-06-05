@@ -61,6 +61,7 @@ Frontend engineer with 6+ years in React and Vue. I've led a frontend team, resc
     * *AI as a Semantic Router:* When algorithmic matching isn't enough, the AI is not allowed to "chat"; it acts strictly as a classifier, outputting a JSON intent ID to fetch verified data. This eliminates generative hallucinations by design and significantly minimizes token consumption by avoiding unnecessary text generation.
     * *0-Cost Failover Chain:* Powered by a tiered chain of 4 Groq API models. If a primary model hits a rate limit or goes down, the request seamlessly routes to the next, ensuring enterprise-grade uptime on free tiers.
     * *Isolated Generative RAG:* True text generation is strictly sandboxed to a single intent (cv.meta.cv_search) for niche technical questions. It reads the full plain-text CV to generate custom answers based on my actual experience.
+    * *3 AI loops (one chain of ai models used as the ai routing, second analyzes my CV with the question context, third layer is humanizer of the answer).
     * *Graceful Degradation:* Redis tracks global and per-session API limits to prevent DDoS and quota exhaustion, degrading smoothly to pure algorithmic search if limits are hit. 
     * *Continuous Logging:* Every interaction, including the query, resolved intent, and resolution source, is logged to Supabase to analyze and improve the flow.
 * **Stack:** Nuxt 4, Vue 3, Tailwind CSS, PostgreSQL, Redis, Fuse.js, AI (Groq API (GPT-OSS / Llama 3.1)).
